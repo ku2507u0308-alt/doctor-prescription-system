@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Prescription Access</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LEVEL 1 -->
+<div class="card active" id="level1">
+  <div class="progress">
+    <div class="step active"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+  </div>
+
+  <h2>Doctor Verification</h2>
+  <p class="subtitle">Level 1 · Professional Details</p>
+
+  <div class="group"><label>Full Name</label><input placeholder="Dr. Full Name"></div>
+  <div class="group"><label>Medical Council Registration No</label><input placeholder="MCI / State ID"></div>
+  <div class="group"><label>Specialization</label><input placeholder="Cardiology, Pediatrics"></div>
+  <div class="group"><label>Hospital / Clinic</label><input placeholder="Hospital Name"></div>
+  <div class="group"><label>Work Email / Phone</label><input placeholder="official@email.com"></div>
+
+  <button onclick="next('level1','level2')">Continue</button>
+</div>
+
+<!-- LEVEL 2 -->
+<div class="card" id="level2">
+  <div class="progress">
+    <div class="step active"></div>
+    <div class="step active"></div>
+    <div class="step"></div>
+  </div>
+
+  <h2>License Verification</h2>
+  <p class="subtitle">Level 2 · Upload Medical License</p>
+
+  <input type="file">
+
+  <button onclick="next('level2','level3')">Submit for Approval</button>
+</div>
+
+<!-- LEVEL 3 -->
+<div class="card" id="level3">
+  <div class="progress">
+    <div class="step active"></div>
+    <div class="step active"></div>
+    <div class="step active"></div>
+  </div>
+
+  <h2>Create Password</h2>
+  <p class="subtitle">Level 3 · Secure Account Setup</p>
+
+  <input type="password" id="password" placeholder="8–10 chars, Aa1">
+
+  <button onclick="validatePassword()">Save Password</button>
+</div>
+
+<!-- LOGIN -->
+<div class="card" id="login">
+  <h2>Doctor Login</h2>
+  <p class="subtitle">Prescription access restricted</p>
+
+  <input placeholder="Doctor ID / Email">
+  <input type="password" placeholder="Password">
+
+  <button>Login</button>
+
+  <p class="footer">
+    <span class="link" onclick="next('login','forgot')">Forgot password?</span>
+  </p>
+</div>
+
+<!-- FORGOT PASSWORD -->
+<div class="card" id="forgot">
+  <h2>Reset Password</h2>
+  <p class="subtitle">OTP verification required</p>
+
+  <input placeholder="Doctor ID">
+  <input placeholder="OTP">
+  <input type="password" placeholder="New Password">
+
+  <button>Password Reset</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
